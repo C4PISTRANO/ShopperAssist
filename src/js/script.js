@@ -15,5 +15,9 @@ list.append(item);
 let removeBtn = document.createElement('span');
   removeBtn.classList.add('remove');
   item.append(removeBtn);
+  removeBtn.addEventListener('click' , deleteItem);
+}
 
+function deleteItem(e) {
+  this.parentElement.remove();
 }
