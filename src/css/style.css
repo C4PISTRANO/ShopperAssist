@@ -91,3 +91,22 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
+
+.container ol li .check p {
+  text-decoration: line-through;
+  color: rgba(0,0,0,0.2);
+}
+
+.container ol li .check p:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  width: 25px;
+  height: 25px;
+  /*background: url(plus.png);
+  background-size: cover*/
+  background: green;
+  border-radius: 50%;
+  cursor: pointer;
+}
