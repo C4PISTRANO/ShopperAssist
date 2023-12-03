@@ -11,3 +11,5 @@ text.textContent = data;
 this.elements.writeList.value = "";
 item.append(text);
 list.append(item);
+
+}
