@@ -12,4 +12,8 @@ this.elements.writeList.value = "";
 item.append(text);
 list.append(item);
 
+let removeBtn = document.createElement('span');
+  removeBtn.classList.add('remove');
+  item.append(removeBtn);
+
 }
