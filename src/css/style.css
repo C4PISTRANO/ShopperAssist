@@ -92,12 +92,12 @@ body {
   cursor: pointer;
 }
 
-.container ol li .check p {
+.container ol li.check p {
   text-decoration: line-through;
   color: rgba(0,0,0,0.2);
 }
 
-.container ol li .check p:after {
+.container ol li.check p:after {
   content: '';
   position: absolute;
   top: 5px;
