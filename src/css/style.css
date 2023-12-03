@@ -78,3 +78,16 @@ body {
   font-size: 1.5em;
   height: 50px;
 }
+
+.container ol li .remove {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  /*background: url(minus.png);
+  background-size: cover*/
+  background: #f00;
+  border-radius: 50%;
+  cursor: pointer;
+}
