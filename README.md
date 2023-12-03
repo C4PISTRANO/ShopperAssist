@@ -23,3 +23,6 @@ O melhor assistente para suas compras.
 🖐🏻 Tudo na palma da sua mão. 
 
 Simplifique suas compras de mercado com nossa ajuda inteligente.
+
+## Testar aplicação
+Para testar a aplicação, basta clicar no link: https://c4pistrano.github.io/ShopperAssist/
