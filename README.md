@@ -1,5 +1,5 @@
 # ShopperAssist
-O melhor assistente para suas compras.
+O melhor assistente para suas compras. 🛒
 
 <img src="https://github.com/C4PISTRANO/ShopperAssist/assets/80759812/cd50c2cb-c72d-4341-874c-407534db055d">
 
