@@ -8,6 +8,6 @@ function addItem(e){
   let text = document.createElement('p');
 
 text.textContent = data;
-this.element.writeList.value = "";
+this.elements.writeList.value = "";
 item.append(text);
 list.append(item);
