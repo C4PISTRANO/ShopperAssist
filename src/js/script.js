@@ -16,8 +16,14 @@ let removeBtn = document.createElement('span');
   removeBtn.classList.add('remove');
   item.append(removeBtn);
   removeBtn.addEventListener('click' , deleteItem);
+  item.addEventListener('click' , checkItem);
 }
 
 function deleteItem(e) {
   this.parentElement.remove();
+}
+
+function checkItem(e) {
+  this.classList.toogle('check');
+  
 }
