@@ -11,7 +11,7 @@ body {
   align-items: center;
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(45deg,#9c27b0,#31d5eb);
+  background: linear-gradient(-20deg, #1d2c80,#31d5eb);
 }
 
 .container {
@@ -28,6 +28,7 @@ body {
   background: #fff;
   padding: 20px;
   box-shadow: 15px 15px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
 }
 
 .container .box h2 {
@@ -51,6 +52,7 @@ body {
   padding: 10px;
   border: 1px solid #333;
   outline: none;
+  border-radius: 5px 0 0 5px;
 }
 
 .container .box #grocery button {
@@ -61,6 +63,8 @@ body {
   border: 1px solid #333;
   outline: none;
   cursor: pointer;
+  border-radius: 0 5px 5px 0;
+
 }
 
 .container ol {
@@ -71,6 +75,7 @@ body {
   background: #fff repeating-linear-gradient(transparent 0%, transparent 99%, #000 99%, #000 100%);
   background-size: 50px 50px;
   box-shadow: 15px 15px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
 }
 
 .container ol li {

@@ -1,22 +1,23 @@
 let grocery = document.getElementById('grocery');
 grocery.addEventListener('submit', addItem);
-function addItem(e){
+
+function addItem(e) {
   e.preventDefault();
   let data = this.elements.writeList.value;
   let list = document.querySelector('ol');
   let item = document.createElement('li');
   let text = document.createElement('p');
 
-text.textContent = data;
-this.elements.writeList.value = "";
-item.append(text);
-list.append(item);
+  text.textContent = data;
+  this.elements.writeList.value = "";
+  item.append(text);
+  list.append(item);
 
-let removeBtn = document.createElement('span');
+  let removeBtn = document.createElement('span');
   removeBtn.classList.add('remove');
   item.append(removeBtn);
-  removeBtn.addEventListener('click' , deleteItem);
-  item.addEventListener('click' , checkItem);
+  removeBtn.addEventListener('click', deleteItem);
+  item.addEventListener('click', checkItem);
 }
 
 function deleteItem(e) {
@@ -24,6 +25,6 @@ function deleteItem(e) {
 }
 
 function checkItem(e) {
-  this.classList.toogle('check');
-  
+  this.classList.toggle('check');
+
 }
