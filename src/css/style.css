@@ -92,7 +92,7 @@ body {
   height: 25px;
   /*background: url(minus.png);
   background-size: cover*/
-  background: #f00;
+  background: #F03A17;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -111,7 +111,7 @@ body {
   height: 25px;
   /*background: url(plus.png);
   background-size: cover*/
-  background: #0f0;
+  background: #4bae4f;
   border-radius: 50%;
   cursor: pointer;
 }
