@@ -42,6 +42,8 @@ body {
   position: relative;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container .box #grocery input {
@@ -53,16 +55,30 @@ body {
   border-radius: 5px 0 0 5px;
 }
 
+.container .box #grocery .button-container {
+  display: flex;
+  margin-top: 10px;
+  max-width: 300px;
+}
+
 .container .box #grocery button {
   background: #4bae4f;
   color: #fff;
   min-width: 100px;
-  font-weight: 500;
-  border: 1px solid #333;
+  min-height: 30px;
   outline: none;
   cursor: pointer;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px 0 0 5px;
+  flex: 1;
+  min-width: 0;
+}
 
+.container .box #grocery #clearListBtn {
+  background: #F03A17;
+  color: #fff;
+  max-width: 100px;
+  min-width: 0;
+  border-radius: 0 5px 5px 0;
 }
 
 .container ol {

@@ -83,4 +83,30 @@ function updateLocalStorage() {
   localStorage.setItem('shoppingList', listHtml);
 }
 
+// Seleciona o botão de limpar
+let clearListBtn = document.getElementById('clearListBtn');
+
+// Adiciona um ouvinte de evento para o clique no botão de limpar
+clearListBtn.addEventListener('click', function () {
+  // Exibe uma mensagem de confirmação ao usuário
+  let userConfirmation = confirm('Tem certeza de que deseja limpar toda a lista?');
+
+  // Se o usuário confirmar, limpa a lista
+  if (userConfirmation) {
+    clearList();
+  }
+});
+
+// Função para limpar toda a lista
+function clearList() {
+  // Seleciona a lista
+  let list = document.querySelector('ol');
+
+  // Remove todos os itens da lista
+  list.innerHTML = '';
+
+  // Atualiza o localStorage após limpar a lista
+  updateLocalStorage();
+}
+
 
