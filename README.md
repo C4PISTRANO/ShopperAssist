@@ -1,7 +1,7 @@
 # 🛒 ShopperAssist  
 O melhor assistente para suas compras.
 
-<img src="https://github.com/C4PISTRANO/ShopperAssist/assets/80759812/cd50c2cb-c72d-4341-874c-407534db055d">
+<img src="https://github.com/C4PISTRANO/ShopperAssist/assets/80759812/ced92a3d-14a2-469b-bdb6-7eec8bce81ce">
 
 ## Como Funciona?
 📱 Nosso aplicativo de assistência de compras torna a sua ida ao supermercado mais fácil do que nunca. 
