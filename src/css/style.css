@@ -63,12 +63,13 @@ body {
 .container .box #grocery button {
   background: #4bae4f;
   color: #fff;
-  min-width: 100px;
+  min-width: 80px;
   font-weight: 500;
   border: 1px solid #333;
   outline: none;
   cursor: pointer;
   border-radius: 0 5px 5px 0;
+  padding: 0 10px;
 }
 
 .container .box #grocery #clearListBtn {
