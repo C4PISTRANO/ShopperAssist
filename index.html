@@ -16,19 +16,39 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="box">
-            <h2><img class="logo" src="./src/img/shopping-cart.png" alt="Logo Carrinho"> ShopperAssist</h2>
+    <main class="container">
+        <section class="box">
+            <h2><img class="logo" src="./src/img/shopping-cart.png" alt="Logo Carrinho">ShopperAssist</h2>
             <form id="grocery">
                 <input id="writeList" type="text" placeholder="Escreva um item..." required>
                 <button>Add Item</button>
-                <button id="clearListBtn">Limpar Lista</button>
             </form>
-        </div>
+        </section>
 
-        <ol></ol>
+        <section>
+            <ol></ol>
+        </section>
 
-    </div>
+        <section class="totalBox">
+            <h2>Total R$ <span>0,00</span> </h2>
+            <div class="totalValue">
+                <button id="clearListBtn">
+                    <img class="logoTrash" src="./src/img/trash-fill.png" alt="Logo Lixeira">
+                    Limpar Lista
+                </button>
+
+            </div>
+        </section>
+
+
+        <footer class="footer">
+            <p class="copyrights">Copyright © 2023 <a href="https://raphaelcapistrano.dev.br"
+                    title="Portfolio Raphael Capistrano" target="_blank"><B>C4PISTRANO</B></a>. Todos os direitos
+                reservados.
+            </p>
+        </footer>
+    </main>
+
     <script src="./src/js/script.js"></script>
 </body>
 

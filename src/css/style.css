@@ -28,7 +28,7 @@ body {
 .container .box {
   background: #fff;
   padding: 20px;
-  box-shadow: 15px 15px 15px rgba(0,0,0,0.1);
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
@@ -39,9 +39,13 @@ body {
   margin-bottom: 15px;
   width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.container .box h2 .logo{
+.container .box h2 .logo {
   height: 50px;
 }
 
@@ -72,12 +76,6 @@ body {
   padding: 0 10px;
 }
 
-.container .box #grocery #clearListBtn {
-  background: #F03A17;
-  color: #fff;
-  border-radius: 5px 0 0 5px;
-}
-
 .container ol {
   position: relative;
   width: 100%;
@@ -85,7 +83,7 @@ body {
   min-height: 398px;
   background: #fff repeating-linear-gradient(transparent 0%, transparent 99%, #000 99%, #000 100%);
   background-size: 50px 50px;
-  box-shadow: 15px 15px 15px rgba(0,0,0,0.1);
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
@@ -110,7 +108,7 @@ body {
 
 .container ol li.check p {
   text-decoration: line-through;
-  color: rgba(0,0,0,0.2);
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .container ol li.check p:after {
@@ -125,4 +123,46 @@ body {
   background: #4bae4f;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.totalBox {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  
+}
+
+.totalValue {
+  display: flex;
+  justify-content: center;
+}
+
+.totalBox h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.totalBox .logoTrash {
+  margin-right: 5px;
+}
+
+.totalBox #clearListBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  min-height: 40px;
+  padding: 5px 10px;
+  background: #F03A17;
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #333;
+  font-weight: 500;
+}
+
+.footer {
+  color: #fff;
+  text-align: center;
 }
