@@ -28,3 +28,6 @@ Simplifique suas compras de mercado com nossa ajuda inteligente.
 
 ## Testar aplicação
 Para testar a aplicação, basta acessar o link: https://c4pistrano.github.io/ShopperAssist/
+
+## Licença
+Copyright © 2023 C4PISTRANO [https://raphaelcapistrano.dev.br/]. Todos os direitos reservados.
