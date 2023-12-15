@@ -30,6 +30,7 @@ body {
   padding: 20px;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  margin-top: 15px;
 }
 
 .container .box h2 {
@@ -64,10 +65,19 @@ body {
   border-radius: 5px 0 0 5px;
 }
 
+.container .box #grocery button .logoPlus {
+  width: 15px;
+  margin-right: 5px;
+}
+
 .container .box #grocery button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #4bae4f;
   color: #fff;
-  min-width: 80px;
+  min-width: 100px;
+  min-height: 40px;
   font-weight: 500;
   border: 1px solid #333;
   outline: none;
@@ -91,6 +101,7 @@ body {
   position: relative;
   font-size: 1.5em;
   height: 50px;
+  margin-left: 10px;
 }
 
 .container ol li .remove {
@@ -130,15 +141,9 @@ body {
   padding: 20px;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  
 }
 
-.totalValue {
-  display: flex;
-  justify-content: center;
-}
-
-.totalBox h2 {
+.totalBox .totalValue {
   margin-bottom: 15px;
   text-align: center;
 }
@@ -160,9 +165,11 @@ body {
   border-radius: 5px;
   border: 1px solid #333;
   font-weight: 500;
+  margin: 0 auto;
 }
 
 .footer {
   color: #fff;
   text-align: center;
+  margin-bottom: 15px;
 }
