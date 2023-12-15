@@ -28,7 +28,7 @@ body {
 .container .box {
   background: #fff;
   padding: 20px;
-  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   margin-top: 15px;
 }
@@ -93,7 +93,7 @@ body {
   min-height: 398px;
   background: #fff repeating-linear-gradient(transparent 0%, transparent 99%, #000 99%, #000 100%);
   background-size: 50px 50px;
-  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
 
@@ -108,13 +108,21 @@ body {
   position: absolute;
   top: 5px;
   right: 0;
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
   /*background: url(minus.png);
   background-size: cover*/
   background: #F03A17;
-  border-radius: 50%;
+  border: 1px solid #333;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+.container ol li .remove img {
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  /* filter: invert(1); */
 }
 
 .container ol li.check p {
@@ -132,14 +140,15 @@ body {
   /*background: url(plus.png);
   background-size: cover*/
   background: #4bae4f;
-  border-radius: 50%;
+  border: 1px solid #333;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .totalBox {
   background: #fff;
   padding: 20px;
-  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
 
@@ -170,6 +179,13 @@ body {
 
 .footer {
   color: #fff;
+  max-width: 70vw;
+  margin: 0 auto 15px auto;
   text-align: center;
-  margin-bottom: 15px;
+  text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.footer a {
+  color:#4bae4f;
+  text-decoration: none;
 }
