@@ -20,6 +20,8 @@ O melhor assistente para suas compras.
 
 💲💲💲 Acompanhe seus gastos em tempo real. - WIP
 
+🗑️ Remova todos os itens da lista. ✔️
+
 🖐🏻 Tudo na palma da sua mão. 
 
 Simplifique suas compras de mercado com nossa ajuda inteligente.
