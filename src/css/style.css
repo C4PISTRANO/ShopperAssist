@@ -11,7 +11,7 @@ body {
   align-items: center;
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(#00a8ff, #000) url('.src/img/background5.jpg');
+  background: linear-gradient(#00a8ff, #000) /*url('.src/img/background5.jpg')*/;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
