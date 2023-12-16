@@ -56,7 +56,7 @@ function addItem(e) {
 
   // Adiciona a imagem dentro do span
   let img = document.createElement('img');
-  img.src = '/src/img/trash-fill.png';
+  img.src = './src/img/trash-fill.png';
   img.alt = 'Icone Lixeira';
   removeBtn.append(img);
 
