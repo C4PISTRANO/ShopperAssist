@@ -43,6 +43,14 @@ function addItem(e) {
   let item = document.createElement('li');
   let text = document.createElement('p');
 
+  // Adiciona o novo input do tipo número
+  let quantityInput = document.createElement('input');
+  quantityInput.type = 'number';
+  quantityInput.value = 1;
+  quantityInput.min = 1;
+  quantityInput.classList.add('quantity-input');
+  item.append(quantityInput);
+  
   // Adiciona o texto do formulário ao item da lista
   text.textContent = data;
   this.elements.writeList.value = "";
