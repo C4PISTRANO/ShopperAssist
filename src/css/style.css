@@ -105,6 +105,10 @@ body {
   /*margin-left: 10px;*/
 }
 
+.container ul li .quantity-input {
+  display: flex;
+}
+
 .container ul li .remove {
   position: absolute;
   top: 5px;
