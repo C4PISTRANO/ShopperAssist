@@ -28,6 +28,7 @@ body {
 .container .box {
   position: sticky;
   top: 0px;
+  z-index: 100;
   background: #fff;
   padding: 20px;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
@@ -105,7 +106,8 @@ body {
   position: relative;
   font-size: 1.5em;
   height: 50px;
-  margin-left: 10px;
+  gap: 5px;
+  /*margin-left: 10px;*/
 }
 
 .container ul li .quantity-input{
