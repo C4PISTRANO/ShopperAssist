@@ -5,7 +5,7 @@ function initializeList() {
 
   // Se houver uma lista salva, atualiza o conteúdo da lista na página
   if (savedList) {
-    document.querySelector('ol').innerHTML = savedList;
+    document.querySelector('ul').innerHTML = savedList;
     // Adiciona novamente os manipuladores de eventos após a recarga da lista
     addEventListeners();
   }
@@ -27,7 +27,7 @@ function addEventListeners() {
   });
 
   // Seleciona todos os itens da lista e adiciona um manipulador de eventos
-  let listItems = document.querySelectorAll('ol li');
+  let listItems = document.querySelectorAll('ul li');
   listItems.forEach(item => {
     item.addEventListener('click', checkItem);
   });
@@ -39,7 +39,7 @@ grocery.addEventListener('submit', addItem);
 function addItem(e) {
   e.preventDefault();
   let data = this.elements.writeList.value;
-  let list = document.querySelector('ol');
+  let list = document.querySelector('ul');
   let item = document.createElement('li');
   let text = document.createElement('p');
 
@@ -86,7 +86,7 @@ function checkItem(e) {
 // Função para atualizar o localStorage com a lista atual
 function updateLocalStorage() {
   // Obtém o HTML da lista e armazena no localStorage
-  let listHtml = document.querySelector('ol').innerHTML;
+  let listHtml = document.querySelector('ul').innerHTML;
   localStorage.setItem('shoppingList', listHtml);
 }
 
@@ -107,7 +107,7 @@ clearListBtn.addEventListener('click', function () {
 // Função para limpar toda a lista
 function clearList() {
   // Seleciona a lista
-  let list = document.querySelector('ol');
+  let list = document.querySelector('ul');
 
   // Remove todos os itens da lista
   list.innerHTML = '';
