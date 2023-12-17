@@ -102,7 +102,7 @@ body {
   position: relative;
   font-size: 1.5em;
   height: 50px;
-  margin-left: 10px;
+  /*margin-left: 10px;*/
 }
 
 .container ul li .remove {
