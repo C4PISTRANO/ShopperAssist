@@ -86,7 +86,7 @@ body {
   padding: 0 10px;
 }
 
-.container ol {
+.container ul {
   position: relative;
   width: 100%;
   padding: 10px 20px 10px 40px;
@@ -97,14 +97,14 @@ body {
   border-radius: 10px;
 }
 
-.container ol li {
+.container ul li {
   position: relative;
   font-size: 1.5em;
   height: 50px;
   margin-left: 10px;
 }
 
-.container ol li .remove {
+.container ul li .remove {
   position: absolute;
   top: 5px;
   right: 0;
@@ -118,19 +118,19 @@ body {
   cursor: pointer;
 }
 
-.container ol li .remove img {
+.container ul li .remove img {
   position: absolute;
   top: 5px;
   right: 4px;
   /* filter: invert(1); */
 }
 
-.container ol li.check p {
+.container ul li.check p {
   text-decoration: line-through;
   color: rgba(0, 0, 0, 0.2);
 }
 
-.container ol li.check p:after {
+.container ul li.check p:after {
   content: '';
   position: absolute;
   top: 5px;
