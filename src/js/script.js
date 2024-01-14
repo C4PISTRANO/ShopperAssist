@@ -43,13 +43,6 @@ function addItem(e) {
   let item = document.createElement('li');
   let text = document.createElement('p');
 
-  // Contêiner para os botões (- e +) e o input
-  let quantityContainer = document.createElement('div'); 
-
-  // Botões de diminuir e aumentar
-  let decrementButton = document.createElement('button');
-  let incrementButton = document.createElement('button');
-  
   // Adiciona o novo input do tipo número
   let quantityInput = document.createElement('input');
   quantityInput.type = 'number';
@@ -60,20 +53,6 @@ function addItem(e) {
   quantityInput.classList.add('quantity-input');
   item.append(quantityInput);
 
-  // Adiciona os botões de incremento e decremento
-  incrementButton.textContent = '+';
-  incrementButton.addEventListener('click', incrementQuantity);
-  decrementButton.textContent = '-';
-  decrementButton.addEventListener('click', decrementQuantity);
-
-  // Adiciona os botões e o input ao contêiner
-  quantityContainer.appendChild(decrementButton);
-  quantityContainer.appendChild(quantityInput);
-  quantityContainer.appendChild(incrementButton);
-
-  // Adiciona o novo contêiner ao item da lista
-  item.appendChild(quantityContainer);
-  
   // Adiciona o texto do formulário ao item da lista
   text.textContent = data;
   this.elements.writeList.value = "";
@@ -145,15 +124,4 @@ function clearList() {
 
   // Atualiza o localStorage após limpar a lista
   updateLocalStorage();
-
-  // Funções para manipular a quantidade
-  function incrementQuantity() {
-    quantityInput.value = parseInt(quantityInput.value) + 1;
-  }
-
-  function decrementQuantity() {
-    if (parseInt(quantityInput.value) > 1) {
-      quantityInput.value = parseInt(quantityInput.value) - 1;
-    }
 }
-
