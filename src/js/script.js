@@ -1,30 +1,37 @@
 // Função para inicializar a lista a partir do localStorage
 function initializeList() {
-  // Recupera os dados do localStorage
-  let savedData = localStorage.getItem('shoppingList');
+  // Recupera a lista do localStorage
+  let savedList = localStorage.getItem('shoppingList');
 
-  // Se houver dados salvos, atualiza o conteúdo da lista na página
-  if (savedData) {
-    let parsedData = JSON.parse(savedData);
-    document.querySelector('ul').innerHTML = parsedData.listHtml;
-
-    // Atualiza as quantidades dos itens
-    let quantities = parsedData.quantities;
-    let quantityInputs = document.querySelectorAll('.quantity-input');
-    quantityInputs.forEach((input, index) => {
-      input.value = quantities[index];
-    });
-
+  // Se houver uma lista salva, atualiza o conteúdo da lista na página
+  if (savedList) {
+    document.querySelector('ul').innerHTML = savedList;
     // Adiciona novamente os manipuladores de eventos após a recarga da lista
     addEventListeners();
   }
 }
 
-// Adiciona novamente os manipuladores de eventos após a carga da página
+// Adiciona a função de inicialização à carga da página
 document.addEventListener('DOMContentLoaded', function () {
   initializeList();
-  addEventListeners(); // Adiciona os manipuladores de eventos uma vez após a carga da página
+  // Adiciona novamente os manipuladores de eventos após a recarga da página
+  addEventListeners();
 });
+
+// Função para adicionar manipuladores de eventos após a recarga da página
+function addEventListeners() {
+  // Seleciona todos os botões de remoção e adiciona um manipulador de eventos
+  let removeButtons = document.querySelectorAll('.remove');
+  removeButtons.forEach(btn => {
+    btn.addEventListener('click', deleteItem);
+  });
+
+  // Seleciona todos os itens da lista e adiciona um manipulador de eventos
+  let listItems = document.querySelectorAll('ul li');
+  listItems.forEach(item => {
+    item.addEventListener('click', checkItem);
+  });
+}
 
 let grocery = document.getElementById('grocery');
 grocery.addEventListener('submit', addItem);
@@ -36,6 +43,13 @@ function addItem(e) {
   let item = document.createElement('li');
   let text = document.createElement('p');
 
+  // Contêiner para os botões (- e +) e o input
+  let quantityContainer = document.createElement('div'); 
+
+  // Botões de diminuir e aumentar
+  let decrementButton = document.createElement('button');
+  let incrementButton = document.createElement('button');
+  
   // Adiciona o novo input do tipo número
   let quantityInput = document.createElement('input');
   quantityInput.type = 'number';
@@ -46,6 +60,20 @@ function addItem(e) {
   quantityInput.classList.add('quantity-input');
   item.append(quantityInput);
 
+  // Adiciona os botões de incremento e decremento
+  incrementButton.textContent = '+';
+  incrementButton.addEventListener('click', incrementQuantity);
+  decrementButton.textContent = '-';
+  decrementButton.addEventListener('click', decrementQuantity);
+
+  // Adiciona os botões e o input ao contêiner
+  quantityContainer.appendChild(decrementButton);
+  quantityContainer.appendChild(quantityInput);
+  quantityContainer.appendChild(incrementButton);
+
+  // Adiciona o novo contêiner ao item da lista
+  item.appendChild(quantityContainer);
+  
   // Adiciona o texto do formulário ao item da lista
   text.textContent = data;
   this.elements.writeList.value = "";
@@ -68,38 +96,8 @@ function addItem(e) {
   // Armazena a lista atualizada no localStorage
   updateLocalStorage();
 
-  // Não é necessário chamar addEventListeners aqui, pois já foi adicionado na inicialização da página
-}
-
-function updateLocalStorage() {
-  let listHtml = document.querySelector('ul').innerHTML;
-
-  // Obtém a quantidade de cada item
-  let quantities = Array.from(document.querySelectorAll('.quantity-input')).map(input => input.value);
-
-  // Cria um objeto para armazenar o HTML da lista e as quantidades
-  let dataToStore = {
-    listHtml: listHtml,
-    quantities: quantities
-  };
-
-  // Armazena o objeto no localStorage
-  localStorage.setItem('shoppingList', JSON.stringify(dataToStore));
-}
-
-// Função para adicionar manipuladores de eventos após a recarga da página
-function addEventListeners() {
-  // Seleciona todos os botões de remoção e adiciona um manipulador de eventos
-  let removeButtons = document.querySelectorAll('.remove');
-  removeButtons.forEach(btn => {
-    btn.addEventListener('click', deleteItem);
-  });
-
-  // Seleciona todos os itens da lista e adiciona um manipulador de eventos
-  let listItems = document.querySelectorAll('ul li');
-  listItems.forEach(item => {
-    item.addEventListener('click', checkItem);
-  });
+  // Adiciona novamente os manipuladores de eventos após a adição do item
+  addEventListeners();
 }
 
 function deleteItem(e) {
@@ -147,4 +145,15 @@ function clearList() {
 
   // Atualiza o localStorage após limpar a lista
   updateLocalStorage();
+
+  // Funções para manipular a quantidade
+  function incrementQuantity() {
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+  }
+
+  function decrementQuantity() {
+    if (parseInt(quantityInput.value) > 1) {
+      quantityInput.value = parseInt(quantityInput.value) - 1;
+    }
 }
+
