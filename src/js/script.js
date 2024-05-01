@@ -10,12 +10,15 @@ function initializeList() {
     addEventListeners();
   }
 
-  // Recupera o valor do campo 'input' do localStorage
+  // Recupera o valor do campo 'quantityInput' do localStorage
   let inputValue = localStorage.getItem('inputValue');
 
-  // Se houver um valor salvo, define o valor do campo 'input' com base nesse valor
+  // Se houver um valor salvo, define o valor do campo 'quantityInput' com base nesse valor
   if (inputValue) {
-    document.getElementById('writeList').value = inputValue;
+    let quantityInputs = document.querySelectorAll('.quantity-input');
+    quantityInputs.forEach(input => {
+      input.value = inputValue;
+    });
   }
 }
 
@@ -51,7 +54,7 @@ function addItem(e) {
   let item = document.createElement('li');
   let text = document.createElement('p');
 
-  // Armazena o valor do campo 'input' no localStorage
+  // Armazena o valor do campo 'quantityInput' no localStorage
   localStorage.setItem('inputValue', data);
 
   // Adiciona o novo input do tipo número
