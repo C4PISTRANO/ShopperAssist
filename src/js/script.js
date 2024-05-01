@@ -1,9 +1,7 @@
-// Função para inicializar a lista a partir do localStorage, incluindo o valor do campo 'input'
+// Função para inicializar a lista a partir do localStorage
 function initializeList() {
   // Recupera a lista do localStorage
   let savedList = localStorage.getItem('shoppingList');
-  // Recupera o valor do campo 'input' do localStorage
-  let savedValue = localStorage.getItem('inputValue');
 
   // Se houver uma lista salva, atualiza o conteúdo da lista na página
   if (savedList) {
@@ -12,9 +10,12 @@ function initializeList() {
     addEventListeners();
   }
 
-  // Define o valor do campo 'input' como o valor recuperado do localStorage
-  if (savedValue) {
-    document.getElementById('writeList').value = savedValue;
+  // Recupera o valor do campo 'input' do localStorage
+  let inputValue = localStorage.getItem('inputValue');
+
+  // Se houver um valor salvo, define o valor do campo 'input' com base nesse valor
+  if (inputValue) {
+    document.getElementById('writeList').value = inputValue;
   }
 }
 
