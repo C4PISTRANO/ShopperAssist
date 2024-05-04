@@ -119,17 +119,27 @@ body {
 
 .container ul li .quantity-input {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  max-height: 33px;
+  border-radius: 5px;
 }
 
 .container ul li .quantity-input .btn-number {
-  background: #ffffff;
+  background: #00a8ff;
   border: 1px solid #333;
-  color: #333;
+  color: #fff;
   cursor: pointer;
   padding: 5px;
   outline: none;
+  min-width: 33px;
+  font-weight: 900;
+}
+
+.container ul li .quantity-input .btn-number#minus {
+  border-radius: 5px 0 0 5px;
+}
+
+.container ul li .quantity-input .btn-number#plus {
+  border-radius: 0 5px 5px 0;
 }
 
 .container ul li .quantity-input .btn-number:disabled {
@@ -148,10 +158,10 @@ body {
 
 .container ul li .remove {
   position: absolute;
-  top: 5px;
+  top: 0;
   right: 0;
-  width: 28px;
-  height: 28px;
+  width: 33px;
+  height: 33px;
   background: #F03A17;
   border: 1px solid #333;
   border-radius: 5px;
@@ -160,8 +170,8 @@ body {
 
 .container ul li .remove img {
   position: absolute;
-  top: 5px;
-  right: 4px;
+  top: 8px;
+  right: 7px;
 }
 
 .container ul li.check p {

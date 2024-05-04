@@ -53,14 +53,17 @@ function addItem(e) {
   // Adiciona o conteúdo HTML do novo item
   item.innerHTML = `
       <div class="quantity-input">
-          <button type="button" class="btn-number" data-type="minus">-</button>
-          <input type="text" name="quantidade" class="input-number" value="1" min="1" max="10">
-          <button type="button" class="btn-number" data-type="plus">+</button>
+          <button type="button" class="btn-number" id="minus" data-type="minus">-</button>
+          <input type="text" name="quantidade" class="input-number" value="1" min="1" max="100">
+          <button type="button" class="btn-number" id="plus" data-type="plus">+</button>
       </div>
       <p>${data}</p>
       <span class="remove"><img src="./src/img/trash-fill.png" alt="Icone Lixeira"></span>
   `;
   list.appendChild(item);
+
+    // Limpa o campo de entrada
+  this.elements.writeList.value = "";
 
   // Armazena a lista atualizada no localStorage
   updateLocalStorage();
