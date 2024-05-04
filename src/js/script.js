@@ -5,17 +5,15 @@ function initializeList() {
 
   // Se houver uma lista salva, atualiza o conteúdo da lista na página
   if (savedList) {
-    document.querySelector('ul').innerHTML = savedList;
-    // Adiciona novamente os manipuladores de eventos após a recarga da lista
-    addEventListeners();
+      document.querySelector('ul').innerHTML = savedList;
+      // Adiciona novamente os manipuladores de eventos após a recarga da lista
+      addEventListeners();
   }
 }
 
 // Adiciona a função de inicialização à carga da página
 document.addEventListener('DOMContentLoaded', function () {
   initializeList();
-  // Adiciona novamente os manipuladores de eventos após a recarga da página
-  addEventListeners();
 });
 
 // Função para adicionar manipuladores de eventos após a recarga da página
@@ -23,16 +21,26 @@ function addEventListeners() {
   // Seleciona todos os botões de remoção e adiciona um manipulador de eventos
   let removeButtons = document.querySelectorAll('.remove');
   removeButtons.forEach(btn => {
-    btn.addEventListener('click', deleteItem);
+      btn.addEventListener('click', deleteItem);
   });
 
-  // Seleciona todos os itens da lista e adiciona um manipulador de eventos
+  // Seleciona todos os itens da lista e adiciona os eventos de adição e subtração
   let listItems = document.querySelectorAll('ul li');
   listItems.forEach(item => {
-    item.addEventListener('click', checkItem);
+      let minusButton = item.querySelector('.btn-number[data-type="minus"]');
+      let plusButton = item.querySelector('.btn-number[data-type="plus"]');
+      let inputField = item.querySelector('.input-number');
+
+      minusButton.addEventListener('click', function() {
+          updateQuantity(inputField, -1);
+      });
+      plusButton.addEventListener('click', function() {
+          updateQuantity(inputField, 1);
+      });
   });
 }
 
+// Função para adicionar um novo item à lista
 let grocery = document.getElementById('grocery');
 grocery.addEventListener('submit', addItem);
 
@@ -41,42 +49,37 @@ function addItem(e) {
   let data = this.elements.writeList.value;
   let list = document.querySelector('ul');
   let item = document.createElement('li');
-  let text = document.createElement('p');
 
-  // Adiciona o novo input do tipo número
-  let quantityInput = document.createElement('input');
-  quantityInput.type = 'number';
-  quantityInput.value = 1;
-  quantityInput.min = 1;
-  quantityInput.max = 100;
-  quantityInput.step = 1;
-  quantityInput.classList.add('quantity-input');
-  item.append(quantityInput);
-
-  // Adiciona o texto do formulário ao item da lista
-  text.textContent = data;
-  this.elements.writeList.value = "";
-  item.append(text);
-  list.append(item);
-
-  let removeBtn = document.createElement('span');
-  removeBtn.classList.add('remove');
-  item.append(removeBtn);
-  removeBtn.addEventListener('click', deleteItem);
-
-  // Adiciona a imagem dentro do span
-  let img = document.createElement('img');
-  img.src = './src/img/trash-fill.png';
-  img.alt = 'Icone Lixeira';
-  removeBtn.append(img);
-
-  item.addEventListener('click', checkItem);
+  // Adiciona o conteúdo HTML do novo item
+  item.innerHTML = `
+      <div class="quantity-input">
+          <button type="button" class="btn-number" data-type="minus">-</button>
+          <input type="text" name="quantidade" class="input-number" value="1" min="1" max="10">
+          <button type="button" class="btn-number" data-type="plus">+</button>
+      </div>
+      <p>${data}</p>
+      <span class="remove"><img src="./src/img/trash-fill.png" alt="Icone Lixeira"></span>
+  `;
+  list.appendChild(item);
 
   // Armazena a lista atualizada no localStorage
   updateLocalStorage();
 
-  // Adiciona novamente os manipuladores de eventos após a adição do item
-  addEventListeners();
+  // Adiciona os eventos de adição e subtração ao novo item
+  let minusButton = item.querySelector('.btn-number[data-type="minus"]');
+  let plusButton = item.querySelector('.btn-number[data-type="plus"]');
+  let inputField = item.querySelector('.input-number');
+
+  minusButton.addEventListener('click', function() {
+      updateQuantity(inputField, -1);
+  });
+  plusButton.addEventListener('click', function() {
+      updateQuantity(inputField, 1);
+  });
+  
+  // Adiciona o evento de remoção ao novo item
+  let removeBtn = item.querySelector('.remove');
+  removeBtn.addEventListener('click', deleteItem);
 }
 
 function deleteItem(e) {
@@ -86,11 +89,17 @@ function deleteItem(e) {
   updateLocalStorage();
 }
 
-function checkItem(e) {
-  // Alterna a classe 'check' para marcar/desmarcar um item
-  this.classList.toggle('check');
-  // Atualiza o localStorage após marcar/desmarcar um item
-  updateLocalStorage();
+// Função para atualizar o valor do campo de entrada de quantidade
+function updateQuantity(input, value) {
+  let currentValue = parseInt(input.value);
+  let newValue = currentValue + value;
+
+  // Verifica se o novo valor está dentro dos limites min e max
+  if (newValue >= parseInt(input.min) && newValue <= parseInt(input.max)) {
+      input.value = newValue;
+      // Dispara o evento 'change' para que o localStorage seja atualizado
+      input.dispatchEvent(new Event('change'));
+  }
 }
 
 // Função para atualizar o localStorage com a lista atual
@@ -110,7 +119,7 @@ clearListBtn.addEventListener('click', function () {
 
   // Se o usuário confirmar, limpa a lista
   if (userConfirmation) {
-    clearList();
+      clearList();
   }
 });
 
@@ -125,3 +134,6 @@ function clearList() {
   // Atualiza o localStorage após limpar a lista
   updateLocalStorage();
 }
+
+// Chamada inicial para adicionar manipuladores de eventos
+addEventListeners();

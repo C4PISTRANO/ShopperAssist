@@ -1,3 +1,4 @@
+/* Reset de estilos */
 * {
   margin: 0;
   padding: 0;
@@ -5,18 +6,20 @@
   font-family: 'Segoe UI';
 }
 
+/* Estilos para o corpo da página */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(#00a8ff, #000) /*url('.src/img/background5.jpg')*/;
+  background: linear-gradient(#00a8ff, #000);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+/* Contêiner principal */
 .container {
   width: 90%;
   max-width: 600px;
@@ -25,6 +28,7 @@ body {
   gap: 20px;
 }
 
+/* Estilos para a caixa do formulário */
 .container .box {
   position: sticky;
   top: 0px;
@@ -36,6 +40,7 @@ body {
   margin-top: 15px;
 }
 
+/* Estilos para o título da caixa */
 .container .box h2 {
   font-size: 1.75em;
   font-weight: 500;
@@ -49,10 +54,12 @@ body {
   gap: 10px;
 }
 
+/* Altura do logo */
 .container .box h2 .logo {
-  height: 50px;
+    height: 50px;
 }
 
+/* Estilos para o formulário de adição de itens */
 .container .box #grocery {
   position: relative;
   width: 100%;
@@ -89,8 +96,9 @@ body {
   padding: 0 10px;
 }
 
+/* Estilos para a lista de itens */
 .container ul {
-  list-style-type: none; /*remover marcadores de lista*/
+  list-style-type: none;
   position: relative;
   width: 100%;
   padding: 10px 20px 10px 20px;
@@ -107,13 +115,35 @@ body {
   font-size: 1.5em;
   height: 50px;
   gap: 5px;
-  /*margin-left: 10px;*/
 }
 
-.container ul li .quantity-input{
-  max-width: 30px;
-  max-height: 30px;
+.container ul li .quantity-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container ul li .quantity-input .btn-number {
+  background: #ffffff;
+  border: 1px solid #333;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+  outline: none;
+}
+
+.container ul li .quantity-input .btn-number:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.container ul li .quantity-input .input-number {
+  width: 50px;
   text-align: center;
+  padding: 5px;
+  border: 1px solid #333;
+  margin: 0px;
+  outline: none;
 }
 
 .container ul li .remove {
@@ -122,8 +152,6 @@ body {
   right: 0;
   width: 28px;
   height: 28px;
-  /*background: url(minus.png);
-  background-size: cover*/
   background: #F03A17;
   border: 1px solid #333;
   border-radius: 5px;
@@ -134,7 +162,6 @@ body {
   position: absolute;
   top: 5px;
   right: 4px;
-  /* filter: invert(1); */
 }
 
 .container ul li.check p {
@@ -149,14 +176,13 @@ body {
   right: 35px;
   width: 25px;
   height: 25px;
-  /*background: url(plus.png);
-  background-size: cover*/
   background: #4bae4f;
   border: 1px solid #333;
   border-radius: 5px;
   cursor: pointer;
 }
 
+/* Estilos para a caixa total */
 .totalBox {
   background: #fff;
   padding: 20px;
@@ -189,6 +215,7 @@ body {
   margin: 0 auto;
 }
 
+/* Estilos para o rodapé */
 .footer {
   color: #fff;
   max-width: 70vw;
@@ -198,6 +225,6 @@ body {
 }
 
 .footer a {
-  color:#4bae4f;
+  color: #4bae4f;
   text-decoration: none;
 }
