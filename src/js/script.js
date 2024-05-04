@@ -9,17 +9,6 @@ function initializeList() {
     // Adiciona novamente os manipuladores de eventos após a recarga da lista
     addEventListeners();
   }
-
-  // Recupera o valor do campo 'quantityInput' do localStorage
-  let inputValue = localStorage.getItem('inputValue');
-
-  // Se houver um valor salvo, define o valor do campo 'quantityInput' com base nesse valor
-  if (inputValue) {
-    let quantityInputs = document.querySelectorAll('.quantity-input');
-    quantityInputs.forEach(input => {
-      input.value = inputValue;
-    });
-  }
 }
 
 // Adiciona a função de inicialização à carga da página
@@ -53,9 +42,6 @@ function addItem(e) {
   let list = document.querySelector('ul');
   let item = document.createElement('li');
   let text = document.createElement('p');
-
-  // Armazena o valor do campo 'quantityInput' no localStorage
-  localStorage.setItem('inputValue', data);
 
   // Adiciona o novo input do tipo número
   let quantityInput = document.createElement('input');
